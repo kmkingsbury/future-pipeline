@@ -1,0 +1,7 @@
+name 'future-pipeline'
+maintainer 'The Authors'
+maintainer_email 'you@example.com'
+license 'all_rights'
+description 'Installs/Configures future-pipeline'
+long_description 'Installs/Configures future-pipeline'
+version '0.1.0'
