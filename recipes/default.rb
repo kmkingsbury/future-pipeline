@@ -31,10 +31,11 @@ end
 execute 'get_dtr_cert' do
   command "curl -k https://#{node['dtrhost']}/ca > /etc/docker/certs.d/#{node['dtrhost']}/dtr.crt"
   not_if { File.exist?("/etc/docker/certs.d/#{node['dtrhost']}/dtr.crt") }
+    notifies :restart, 'service[docker]', :delayed
 end
 
 service 'docker' do
-  action :restart
+  action :nothing
 end
 
 
